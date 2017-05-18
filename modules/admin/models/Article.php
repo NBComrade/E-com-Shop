@@ -44,7 +44,7 @@ class Article extends ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content', 'img', 'author_id'], 'required'],
+            [['title', 'content', 'img'], 'required'],
             [['content'], 'string'],
             [['author_id'], 'integer'],
             [['created_at'], 'safe'],
@@ -68,5 +68,10 @@ class Article extends ActiveRecord
     }
     public function getUser(){
         return $this->hasOne(User::className(), ['id'=>'author_id']);
+    }
+    public function beforeSave($insert)
+    {
+        $this->author_id = Yii::$app->user->id;
+        return parent::beforeSave($insert);
     }
 }

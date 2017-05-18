@@ -20,10 +20,7 @@ use yii\widgets\ActiveForm;
         'editorOptions' => ElFinder::ckeditorOptions('elfinder'),
     )); ?>
 
-
     <?= $form->field($model, 'img')->textInput() ?>
-
-    <?= $form->field($model, 'author_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
