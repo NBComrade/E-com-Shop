@@ -23,11 +23,13 @@ class ProductController extends AppController
         $comment = new ProductComments();
         $id = Yii::$app->request->get('id');
         $comments = $comment->getProductCommetns($id);
+        //var_dump($comments);die;
         $product = Product::findOne($id);
         $hits = Product::getHitsProduct();
         if(Yii::$app->request->isPost && $comment->load(Yii::$app->request->post())){
             $comment->product_id = $id;
             $comment->save();
+            Yii::$app->session->setFlash('success','Thank you for your comment!');
         }
         if(empty($product )){
             throw new HttpException(404, "Do not correct query!");

@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 
-    <?= $form->field($model, 'status')->dropDownList([ '0', '1', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'status')->dropDownList([ '0' => 'No Published', '1' =>'Published', ], ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

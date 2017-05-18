@@ -22,7 +22,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'img',
+            [
+                'attribute' => 'img',
+                'value' => function($data){
+                    return Html::img('@web/images/products/' . $data->img, ['width' => 100]);
+                },
+                'format' => 'html'
+            ],
             'name',
             [
               'attribute' => 'category_id',

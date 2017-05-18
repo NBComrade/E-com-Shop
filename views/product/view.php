@@ -111,6 +111,11 @@ $this->title = "$product->name | Eshopper";
 							</div>
 							<div class="tab-pane fade" id="reviews" >
 								<div class="col-sm-12">
+									<?php if(Yii::$app->session->hasFlash('success')): ?>
+										<div class="product-comment">
+											<p><?=Yii::$app->session->getFlash('success');?></p>
+										</div>
+									<?php endif;?>
 									<?php foreach($comments as $item):?>
 											<div class="product-comment">
 												<ul>

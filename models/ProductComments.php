@@ -69,7 +69,7 @@ class ProductComments extends ActiveRecord
     }
     public function getProductCommetns($id)
     {
-        return ProductComments::findAll(['product_id' => $id, 'status'=> '1']);
+        return ProductComments::findAll(['product_id' => $id, 'status'=> '0']);
     }
     public function getUser()
     {

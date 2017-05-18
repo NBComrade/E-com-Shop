@@ -24,7 +24,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'content:ntext',
-            'img',
+            [
+                'attribute' => 'img',
+                'value' => function($data){
+                    return Html::img('@web/images/' . $data->img, ['width' => 100]);
+                },
+                'format' => 'html'
+            ],
             'author_id',
             'created_at',
 
