@@ -117,10 +117,10 @@ LtAppAsset::register($this);
                                         <li><a href="<?= Url::toRoute('article/create');?>">Add article</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Commentaries<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="<?= Url::toRoute('article-comments/')?>">Commentaries<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Commentaries (Products)</a></li>
-                                        <li><a href="cart.html">Commentaries (Articles)</a></li>
+                                        <li><a href="<?=Url::toRoute('product-comments/')?>">Commentaries (Products)</a></li>
+                                        <li><a href="<?= Url::toRoute('article-comments/')?>">Commentaries (Articles)</a></li>
                                     </ul>
                                 </li>
                             </ul>

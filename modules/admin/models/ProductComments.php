@@ -2,27 +2,27 @@
 
 namespace app\modules\admin\models;
 
-use app\models\User;
 use Yii;
+use app\models\User;
 
 /**
- * This is the model class for table "article_comments".
+ * This is the model class for table "product_comments".
  *
  * @property integer $id
- * @property integer $article_id
+ * @property integer $product_id
  * @property integer $user_id
  * @property string $content
  * @property string $created_at
  * @property string $status
  */
-class ArticleComments extends \yii\db\ActiveRecord
+class ProductComments extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'article_comments';
+        return 'product_comments';
     }
 
     /**
@@ -31,8 +31,8 @@ class ArticleComments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['article_id', 'user_id', 'content'], 'required'],
-            [['article_id', 'user_id'], 'integer'],
+            [['product_id', 'user_id', 'content'], 'required'],
+            [['product_id', 'user_id'], 'integer'],
             [['content', 'status'], 'string'],
             [['created_at'], 'safe'],
         ];
@@ -45,7 +45,7 @@ class ArticleComments extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'article_id' => 'Article',
+            'product_id' => 'Product',
             'user_id' => 'User',
             'content' => 'Content',
             'created_at' => 'Created At',
@@ -56,8 +56,8 @@ class ArticleComments extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(),['id'=>'user_id']);
     }
-    public function getArticle()
+    public function getProduct()
     {
-        return $this->hasOne(Article::className(), ['id' => 'article_id']);
+        return $this->hasOne(Product::className(), ['id' => 'product_id']);
     }
 }
