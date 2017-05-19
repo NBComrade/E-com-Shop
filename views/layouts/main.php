@@ -117,6 +117,7 @@ LtAppAsset::register($this);
                     <div class="search_box pull-right">
                         <form method="get" action="<?=Url::toRoute('category/search')?>">
                             <input type="text" placeholder="Search" name="q"/>
+                            <button class="search-button" type="submit"></button>
                         </form>
 
                     </div>

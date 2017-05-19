@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'status',
                 'value' => function($data){
-                    return !$data->status ? "<span class='text-success'>Published</span>" : "<span class='text-danger'>No Published</span>" ;
+                    return !$data->status ? "<span class='text-danger'> No Published</span>" : "<span class='text-success'>Published</span>" ;
                 },
                 'format' => 'html'
             ],

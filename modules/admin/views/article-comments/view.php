@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_at',
             [
                 'attribute' => 'status',
-                'value' => !$model->status ? "<span class='text-success'>Published</span>" : "<span class='text-danger'>No Published</span>",
+                'value' => !$model->status ? "<span class='text-danger'>No Published</span>" : "<span class='text-success'>Published</span>",
                 'format' => 'html'
             ],
         ],

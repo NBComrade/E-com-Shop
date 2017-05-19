@@ -263,9 +263,6 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(../images/home/searchicon.png);
-  background-repeat: no-repeat;
-  background-position: 130px;
 }
 
 
@@ -2557,4 +2554,16 @@ h2.title {
 #w0{
   margin-bottom: 30px;
 }
-
+.search-button{
+  background: #F0F0E9;
+  border: medium none;
+  color: #B2B2B2;
+  height: 35px;
+  outline: medium none;
+  width: 30px;
+  background-image: url(../images/home/searchicon.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+  top: 12px;
+}
