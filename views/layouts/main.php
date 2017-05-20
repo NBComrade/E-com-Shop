@@ -8,8 +8,10 @@ use \app\components\ArticleWidget;
 use app\assets\AppAsset;
 use app\assets\LtAppAsset;
 use yii\helpers\Url;
+
 AppAsset::register($this);
 LtAppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
