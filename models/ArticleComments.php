@@ -16,6 +16,10 @@ class ArticleComments extends ActiveRecord
     {
         return 'article_comments';
     }
+
+    /**
+     * @return array
+     */
     public function behaviors()
     {
         return [
@@ -34,11 +38,21 @@ class ArticleComments extends ActiveRecord
             [['content'], 'required']
         ];
     }
+
+    /**
+     * @param bool $insert
+     * @return bool
+     */
     public function beforeSave($insert)
     {
         $this->user_id = Yii::$app->user->id;
         return parent::beforeSave($insert);
     }
+
+    /**
+     * @param $id
+     * @return static[]
+     */
     public function getArticleCommetns($id)
     {
         return ArticleComments::findAll(['article_id' => $id, 'status'=> '1']);

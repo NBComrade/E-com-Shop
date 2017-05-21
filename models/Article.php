@@ -52,6 +52,10 @@ class Article extends ActiveRecord
             'created_at' => 'Created At',
         ];
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id'=>'author_id']);

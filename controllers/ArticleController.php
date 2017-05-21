@@ -8,6 +8,9 @@ use Yii;
 
 class ArticleController extends AppController
 {
+    /**
+     * @return string
+     */
     public function actionIndex()
     {
         $query = Article::find();
@@ -15,6 +18,10 @@ class ArticleController extends AppController
         $posts = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('index', compact('posts', 'pages'));
     }
+
+    /**
+     * @return string
+     */
     public function actionView()
     {
         $comment = new ArticleComments();
