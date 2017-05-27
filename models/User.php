@@ -8,9 +8,11 @@ use yii\db\ActiveRecord;
 class User extends ActiveRecord implements \yii\web\IdentityInterface
 {
 
-    public static function tableName(){
+    public static function tableName()
+    {
         return 'users';
     }
+
     /**
      * @inheritdoc
      */
@@ -35,7 +37,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username'=>$username]);
+        return static::findOne(['username' => $username]);
     }
 
     /**
@@ -73,11 +75,14 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
         return Yii::$app->security->validatePassword($password, $this->password);
 
     }
+
     public function generateAuthKey()
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
-    public function setPassword($password){
-       $this->password = Yii::$app->getSecurity()->generatePasswordHash($password);
+
+    public function setPassword($password)
+    {
+        $this->password = Yii::$app->getSecurity()->generatePasswordHash($password);
     }
 }
